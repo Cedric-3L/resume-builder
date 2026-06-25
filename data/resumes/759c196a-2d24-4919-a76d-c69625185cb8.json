@@ -1,0 +1,139 @@
+{
+  "name": "我的个人简历",
+  "updatedAt": "2026-04-21T08:24:50.845Z",
+  "snapshot": {
+    "template": "overseasBusinessAnalyst",
+    "theme": "professional",
+    "settings": {
+      "themeColor": "#2563eb",
+      "headingColor": "#5C677A",
+      "fontSize": 13,
+      "lineHeight": 1.55,
+      "margins": 10,
+      "fontFamily": "\"JetBrains Mono\", \"Consolas\", \"Courier New\", monospace",
+      "headerLayout": "spread",
+      "personalInfoDisplay": "icon",
+      "pageTopMargin": 10,
+      "pageLeftMargin": 10,
+      "pageRightMargin": 26,
+      "sectionSpacing": 32,
+      "headingTopSpacing": 10,
+      "headingBottomSpacing": 12
+    },
+    "sections": [
+      {
+        "id": "overseasBusinessAnalyst-personal",
+        "type": "personal",
+        "title": "个人信息",
+        "isVisible": true,
+        "content": {
+          "title": "",
+          "location": "",
+          "phone": "138****5678",
+          "email": "23***sa@outlook.com",
+          "education": "",
+          "name": "张三三",
+          "wechat": "sa***23",
+          "avatar": "/template-assets/avatars/id-photo.png",
+          "summary": ""
+        }
+      },
+      {
+        "id": "overseasBusinessAnalyst-教育背景-education",
+        "type": "education",
+        "title": "教育背景",
+        "isVisible": true,
+        "content": [
+          {
+            "id": "edu-1",
+            "school": "澳大利亚 XXXX 大学（QS 排名 XX）",
+            "degree": "商业分析（硕士）",
+            "startDate": "2021.07",
+            "endDate": "2023.07",
+            "description": "主修课程：数据可视化、数字化转型战略分析、SQL、TCP/IP 协议及网络分层、系统架构管理、项目管理。"
+          },
+          {
+            "id": "edu-2",
+            "school": "澳洲 XXX 大学",
+            "degree": "金融风险（本科）",
+            "startDate": "2018.07",
+            "endDate": "2021.07",
+            "description": "主修课程：证券投资组合、期货及衍生品、统计学、风险管理；辅修：社会发展心理学、日语。"
+          }
+        ]
+      },
+      {
+        "id": "overseasBusinessAnalyst-实习经历-experience",
+        "type": "experience",
+        "title": "实习经历",
+        "isVisible": true,
+        "content": [
+          {
+            "id": "exp-1",
+            "company": "广州 XXXXXXX 科技有限公司",
+            "role": "市场分析实习生（在线）",
+            "startDate": "2021.09",
+            "endDate": "2021.12",
+            "current": false,
+            "description": "数据跟踪：参与 XXXX 免税店数据运营项目，跟踪北京、上海等 9 个地区免税店小程序中的相关数据。\n数据分析及报告：撰写每日与每周分析报告，并制作英文 PPT 交付，在 10 名实习生中获得 A+ 评级。\n竞品活动分析：使用 Python 高效处理 3 大类活动数据，为后续运营策略提供支撑。"
+          }
+        ]
+      },
+      {
+        "id": "overseasBusinessAnalyst-project-main-projects",
+        "type": "projects",
+        "title": "项目/校园经历",
+        "isVisible": true,
+        "content": [
+          {
+            "id": "proj-1",
+            "name": "XXXXX 零售集团运营分析",
+            "role": "个人项目",
+            "startDate": "2021.02",
+            "endDate": "2021.04",
+            "description": "项目管理：独立开展项目，从 0-1 完成背景及数据方案设计、计划制定、项目推进和成果答辩。\n市场分析：展开公司内外部环境、竞品及用户分析，梳理现有运营策略与用户满意度。\n数据可视化：使用 Excel、Numbers、Tableau 等工具完成财务数据可视化。\n运营策略制定：形成运营优化方案，汇报中 80% 的策略被管理层采纳。"
+          },
+          {
+            "id": "proj-2",
+            "name": "XXXXX 公司综合分析",
+            "role": "项目组长",
+            "startDate": "2020.09",
+            "endDate": "2020.12",
+            "description": "竞品分析：带领团队开展案头研究与实地考察，联合 SWOT 与波特五力模型进行市场判断。\n痛点诊断：完成数字化转型问题诊断，为公司制定转型方案。\n流程设计：绘制逻辑图与商业流程图，优化项目展示效果。\n落地分析：实地访谈运营人员，验证方案的可行性与有效性。"
+          },
+          {
+            "id": "proj-3",
+            "name": "XXX 大学 XXX 社团",
+            "role": "活动部部长",
+            "startDate": "2018.11",
+            "endDate": "2020.10",
+            "description": "活动需求分析：设计问卷调研活动需求，转化为具体方案，拉动活动参与人数增长。\n活动策划：主导策划 10 次以上活动，完成活动创意输出、流程设计与现场执行。\n社团运营：推进精细化管理，账号阅读量月均提升 20%。\n跨部门协调：对接赞助、供应商等多方资源，推动活动顺利落地。"
+          }
+        ]
+      },
+      {
+        "id": "overseasBusinessAnalyst-技能/优势及其他-skills",
+        "type": "skills",
+        "title": "技能/优势及其他",
+        "isVisible": true,
+        "content": [
+          {
+            "id": "skill-1",
+            "name": "语言：英语听说读写熟练，可独立撰写英文报告（雅思 6.5）；初级日语口语水平。",
+            "level": "Advanced"
+          },
+          {
+            "id": "skill-2",
+            "name": "专业技能：Python、SQL、Excel、Tableau、XMind；擅长制作商业流程图与 PRD 文档。",
+            "level": "Advanced"
+          },
+          {
+            "id": "skill-3",
+            "name": "自我评价：具备商业分析、项目管理与多类型数据处理能力，曾多次担任 team leader。",
+            "level": "Advanced"
+          }
+        ]
+      }
+    ]
+  }
+}

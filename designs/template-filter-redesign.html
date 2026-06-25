@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>模板库筛选改版稿</title>
+    <style>
+      :root {
+        --bg: #f6f8fc;
+        --card: #ffffff;
+        --ink: #071126;
+        --text: #50617a;
+        --muted: #8b9ab1;
+        --line: #dbe5f4;
+        --blue: #2563eb;
+        --blue-soft: #eef5ff;
+        --amber: #f59e0b;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background:
+          radial-gradient(circle at 28% 0%, rgba(37, 99, 235, 0.08), transparent 30%),
+          var(--bg);
+        color: var(--ink);
+        font-family:
+          Inter, "PingFang SC", "Microsoft YaHei", system-ui, -apple-system,
+          sans-serif;
+      }
+
+      .page {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 56px 32px 80px;
+      }
+
+      .eyebrow {
+        color: var(--blue);
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 14px 0 10px;
+        font-size: 44px;
+        letter-spacing: -0.05em;
+        line-height: 1.05;
+      }
+
+      .lead {
+        max-width: 760px;
+        margin: 0;
+        color: var(--text);
+        font-size: 16px;
+        line-height: 1.75;
+      }
+
+      .filter-panel {
+        margin-top: 34px;
+        border: 1px solid var(--line);
+        border-radius: 34px;
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: 0 28px 80px -54px rgba(15, 23, 42, 0.34);
+        padding: 28px;
+      }
+
+      .panel-top {
+        display: grid;
+        grid-template-columns: 1fr 360px;
+        gap: 28px;
+        align-items: start;
+      }
+
+      .section-title {
+        margin: 0 0 8px;
+        font-size: 15px;
+        font-weight: 800;
+      }
+
+      .section-hint {
+        margin: 0 0 18px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .chip {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: #fff;
+        color: var(--text);
+        padding: 12px 18px;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .chip.active {
+        border-color: var(--ink);
+        background: var(--ink);
+        color: #fff;
+        box-shadow: 0 18px 34px -28px rgba(15, 23, 42, 0.9);
+      }
+
+      .search-box {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        height: 50px;
+        border: 1px solid var(--line);
+        border-radius: 25px;
+        background: #f8fbff;
+        color: var(--muted);
+        padding: 0 18px;
+        font-size: 14px;
+      }
+
+      .quick-actions {
+        display: flex;
+        gap: 12px;
+        margin-top: 14px;
+      }
+
+      .ghost {
+        flex: 1;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: #fff;
+        color: var(--text);
+        padding: 11px 14px;
+        font-size: 13px;
+        font-weight: 800;
+        text-align: center;
+      }
+
+      .industry-row {
+        display: grid;
+        grid-template-columns: 88px 1fr;
+        gap: 18px;
+        margin-top: 26px;
+        padding-top: 24px;
+        border-top: 1px solid #eef2f7;
+        align-items: center;
+      }
+
+      .note {
+        margin-top: 22px;
+        border: 1px solid #fde68a;
+        border-radius: 24px;
+        background: #fff8e7;
+        color: #7c5b18;
+        padding: 18px 22px;
+        font-size: 14px;
+        line-height: 1.7;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        margin-top: 34px;
+      }
+
+      .template-card {
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background: var(--card);
+        padding: 18px;
+        box-shadow: 0 22px 60px -48px rgba(15, 23, 42, 0.44);
+      }
+
+      .preview {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        height: 260px;
+        border-radius: 20px;
+        background: #f8fbff;
+        padding-top: 22px;
+        overflow: hidden;
+      }
+
+      .paper {
+        width: 132px;
+        height: 188px;
+        border: 1px solid #edf2f8;
+        border-radius: 4px;
+        background: #fff;
+        box-shadow: 0 26px 46px -32px rgba(15, 23, 42, 0.35);
+        padding: 16px;
+      }
+
+      .avatar {
+        width: 20px;
+        height: 26px;
+        border-radius: 4px;
+        background: #dce6f2;
+      }
+
+      .line {
+        height: 3px;
+        border-radius: 4px;
+        background: #e7edf6;
+        margin-top: 9px;
+      }
+
+      .line.blue {
+        background: var(--blue);
+        margin-top: 18px;
+      }
+
+      .card-title {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-top: 16px;
+      }
+
+      .card-title h2 {
+        margin: 0;
+        font-size: 17px;
+        line-height: 1.35;
+        letter-spacing: -0.03em;
+      }
+
+      .star {
+        display: grid;
+        place-items: center;
+        flex: 0 0 auto;
+        width: 34px;
+        height: 34px;
+        border: 1px solid #f6d58a;
+        border-radius: 50%;
+        background: #fff9e8;
+        color: var(--amber);
+        font-size: 17px;
+      }
+
+      .desc {
+        margin: 8px 0 16px;
+        color: var(--text);
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      .tag {
+        display: inline-flex;
+        border-radius: 999px;
+        background: var(--blue-soft);
+        color: var(--blue);
+        padding: 7px 10px;
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      @media (max-width: 960px) {
+        .panel-top,
+        .industry-row,
+        .cards {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <div class="eyebrow">Template Library UX</div>
+      <h1>模板库筛选改版稿</h1>
+      <p class="lead">
+        把当前“热门模板 / 行业职位 / 大学专业 / 设计风格”的复杂结构，改成只保留真实能命中的筛选项。先不展示会筛空的风格项，等模板数据补齐后再恢复。
+      </p>
+
+      <section class="filter-panel">
+        <div class="panel-top">
+          <div>
+            <p class="section-title">选择简历用途</p>
+            <p class="section-hint">第一层只保留真实有效的场景筛选。</p>
+            <div class="chips">
+              <span class="chip active">全部模板</span>
+              <span class="chip">校招 / 应届</span>
+              <span class="chip">实习申请</span>
+              <span class="chip">社招 / 跳槽</span>
+              <span class="chip">通用简历</span>
+            </div>
+          </div>
+
+          <div>
+            <div class="search-box">⌕ 搜索岗位 / 行业 / 模板名</div>
+            <div class="quick-actions">
+              <div class="ghost">★ 只看收藏</div>
+              <div class="ghost">清空筛选</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="industry-row">
+          <p class="section-title">行业方向</p>
+          <div class="chips">
+            <span class="chip">互联网 / 技术</span>
+            <span class="chip">金融 / 咨询</span>
+            <span class="chip">教育 / 研究</span>
+            <span class="chip">设计 / 创意</span>
+            <span class="chip">市场 / 内容</span>
+            <span class="chip">通用</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="note">
+        改法：暂时删除“大学专业”和“设计风格”两个入口，因为当前模板数据基本没有对应 style 标签，用户点了容易出现空结果。收藏按钮放在模板名称右侧，不遮挡简历预览。
+      </div>
+
+      <section class="cards">
+        <article class="template-card">
+          <div class="preview">
+            <div class="paper">
+              <div class="avatar"></div>
+              <div class="line blue"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line blue"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+            </div>
+          </div>
+          <div class="card-title">
+            <h2>海外商业分析</h2>
+            <div class="star">★</div>
+          </div>
+          <p class="desc">适合留学、咨询和商业分析投递。</p>
+          <span class="tag">金融 / 咨询</span>
+        </article>
+
+        <article class="template-card">
+          <div class="preview">
+            <div class="paper">
+              <div class="avatar"></div>
+              <div class="line blue"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line blue"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+            </div>
+          </div>
+          <div class="card-title">
+            <h2>产品经理蓝线</h2>
+            <div class="star">☆</div>
+          </div>
+          <p class="desc">适合产品、项目和互联网岗位。</p>
+          <span class="tag">互联网 / 技术</span>
+        </article>
+
+        <article class="template-card">
+          <div class="preview">
+            <div class="paper">
+              <div class="avatar"></div>
+              <div class="line blue"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line blue"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+            </div>
+          </div>
+          <div class="card-title">
+            <h2>人力资源表格</h2>
+            <div class="star">★</div>
+          </div>
+          <p class="desc">适合 HR、行政和表格型履历。</p>
+          <span class="tag">通用</span>
+        </article>
+
+        <article class="template-card">
+          <div class="preview">
+            <div class="paper">
+              <div class="avatar"></div>
+              <div class="line blue"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line blue"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+            </div>
+          </div>
+          <div class="card-title">
+            <h2>清新设计师</h2>
+            <div class="star">☆</div>
+          </div>
+          <p class="desc">适合作品型、设计和创意方向。</p>
+          <span class="tag">设计 / 创意</span>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

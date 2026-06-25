@@ -1,0 +1,136 @@
+{
+  "name": "我的个人简历",
+  "updatedAt": "2026-05-17T08:13:56.892Z",
+  "snapshot": {
+    "template": "bilingualResearchBlue",
+    "theme": "professional",
+    "settings": {
+      "themeColor": "#2563eb",
+      "headingColor": "#D89877",
+      "fontSize": 13,
+      "lineHeight": 1.45,
+      "margins": 10,
+      "fontFamily": "\"Noto Serif SC\", \"Songti SC\", \"Times New Roman\", serif",
+      "headerLayout": "left",
+      "personalInfoDisplay": "plain",
+      "pageTopMargin": 10,
+      "pageLeftMargin": 18,
+      "pageRightMargin": 18,
+      "sectionSpacing": 24,
+      "headingTopSpacing": 22,
+      "headingBottomSpacing": 12
+    },
+    "sections": [
+      {
+        "id": "bilingualResearchBlue-personal",
+        "type": "personal",
+        "title": "个人信息",
+        "isVisible": true,
+        "content": {
+          "title": "",
+          "location": "",
+          "phone": "+86 155-XXXX-9170",
+          "email": "hXXXn@foxmail.com",
+          "education": "",
+          "name": "X X X",
+          "wechat": "dXXXX",
+          "avatar": "/template-assets/avatars/id-photo.png",
+          "summary": ""
+        }
+      },
+      {
+        "id": "bilingualResearchBlue-教育背景 / Education-education",
+        "type": "education",
+        "title": "教育背景 / Education",
+        "isVisible": true,
+        "content": [
+          {
+            "id": "edu-1",
+            "school": "某某大学",
+            "degree": "硕士，商业分析专业",
+            "startDate": "2019/08",
+            "endDate": "2020/11",
+            "description": "“Talkpush” 人工智能招聘平台建设项目组成员。"
+          },
+          {
+            "id": "edu-2",
+            "school": "某某大学",
+            "degree": "学士，国际经济与贸易专业",
+            "startDate": "2015/09",
+            "endDate": "2019/07",
+            "description": "GPA：4.13 / 5（排名：2 / 86）；国家奖学金（Top 1%）、一等奖学金、优秀学生干部奖学金。\n暨南大学校团委组织部副部长；“工商银行杯”全国青年商战大赛二等奖（Top 6%）。"
+          }
+        ]
+      },
+      {
+        "id": "bilingualResearchBlue-实习经历 / Experience-experience",
+        "type": "experience",
+        "title": "实习经历 / Experience",
+        "isVisible": true,
+        "content": [
+          {
+            "id": "exp-1",
+            "company": "某某公司音乐业务线",
+            "role": "市场与用户研究助理",
+            "startDate": "2020/03",
+            "endDate": "至今",
+            "current": false,
+            "description": "市场研究：利用 QuestMobile 和 App Annie 数据库监控音乐、视频、社交等泛娱乐赛道市场数据及竞品动态，输出月度分析报告。\n用户研究：利用 SPSS 清洗处理问卷数据并开展定量分析，实习期间共访谈 35+ 位用户，推动 2 个业务策略落地。"
+          },
+          {
+            "id": "exp-2",
+            "company": "某某某某公司商业智能部",
+            "role": "市场与用户研究实习生",
+            "startDate": "2018/12",
+            "endDate": "2019/05",
+            "current": false,
+            "description": "市场研究：扫描目标商品市场并整合信息，独立完成 20+ 份商品分析报告并完善数据分析指标体系。\n用户研究：协助设计并投放 3 个项目的全国性调研问卷，成功邀约 40+ 位目标用户并建立关系库。"
+          },
+          {
+            "id": "exp-3",
+            "company": "某某某咨询公司",
+            "role": "咨询实习生",
+            "startDate": "2018/09",
+            "endDate": "2018/11",
+            "current": false,
+            "description": "行业调研：搜集整理行业数据，输出 60 页 PPT 的行业研究报告。\n竞品分析：完成 4 家行业标杆公司的分析，并结合内部调研提出主体业务方向与产品策略。"
+          }
+        ]
+      },
+      {
+        "id": "bilingualResearchBlue-project-main-projects",
+        "type": "projects",
+        "title": "项目经历 / Project",
+        "isVisible": true,
+        "content": [
+          {
+            "id": "proj-1",
+            "name": "某公司“未来之眼”文娱研究项目",
+            "role": "高校研究员",
+            "startDate": "2019/04",
+            "endDate": "2019/10",
+            "description": "趋势挖掘：通过榜单监测、社交舆情观察等方式追踪影视、游戏、网文等圈层动态，累计形成 20+ 个研究主题周报。\n课题研究：针对文娱领域前沿课题展开桌面研究、深度访谈和产品体验，为产品研发、运营与商业化提供思路。"
+          }
+        ]
+      },
+      {
+        "id": "bilingualResearchBlue-其他技能 / Skills-skills",
+        "type": "skills",
+        "title": "其他技能 / Skills",
+        "isVisible": true,
+        "content": [
+          {
+            "id": "skill-1",
+            "name": "计算机：Eviews、MySQL、Python、R、Tableau，熟练使用 Word、Excel、PPT。",
+            "level": "Advanced"
+          },
+          {
+            "id": "skill-2",
+            "name": "英语：雅思 7，听说读写熟练。",
+            "level": "Advanced"
+          }
+        ]
+      }
+    ]
+  }
+}

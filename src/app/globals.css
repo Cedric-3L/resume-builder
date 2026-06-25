@@ -1,0 +1,243 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Noto Sans SC";
+  src: url("/fonts/noto-sans-sc-regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Sans SC";
+  src: url("/fonts/noto-sans-sc-bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --background: #faf7f1;
+  --foreground: #171716;
+  --paper: #fffdf8;
+  --paper-deep: #f4eee6;
+  --ink: #171716;
+  --muted: #6f6b65;
+  --line: #d8d0c4;
+  --blue: #075be8;
+  --orange: #f05a1a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  background-image:
+    radial-gradient(circle at 22% 8%, rgba(255,255,255,.82), transparent 28%),
+    radial-gradient(circle at 80% 42%, rgba(255,255,255,.56), transparent 32%);
+}
+
+.font-editorial {
+  font-family: "Songti SC", "STSong", "SimSun", "Noto Serif CJK SC", serif;
+}
+
+.paper-surface {
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(rgba(255,255,255,.12), rgba(255,255,255,.12)),
+    radial-gradient(circle at 20% 10%, rgba(255,255,255,.62), transparent 28%);
+}
+
+.editorial-rule {
+  width: 28px;
+  height: 2px;
+  background: var(--orange);
+}
+
+.editorial-input {
+  width: 100%;
+  border: 1px solid #aaa49b;
+  border-radius: 2px;
+  background: rgba(255,255,255,.18);
+  color: var(--ink);
+  outline: none;
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+
+.editorial-input:focus,
+.editorial-input:focus-within {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 1px var(--blue);
+}
+
+.editorial-button {
+  border-radius: 2px;
+  background: var(--blue);
+  color: white;
+  transition: background .18s ease, transform .18s ease;
+}
+
+.editorial-button:hover {
+  background: #064fc9;
+  transform: translateY(-1px);
+}
+
+.editor-warm-studio {
+  background-image:
+    radial-gradient(circle at 12% 16%, rgba(255, 255, 255, 0.84), transparent 31%),
+    radial-gradient(circle at 78% 12%, rgba(255, 255, 255, 0.58), transparent 30%),
+    linear-gradient(135deg, #fbf8f2 0%, #f7f1e9 100%);
+}
+
+.editor-warm-studio .editor-pane input:not([type="range"]),
+.editor-warm-studio .editor-pane textarea,
+.editor-warm-studio .editor-pane select {
+  border-color: #ded6cb !important;
+  background-color: #fffdf9 !important;
+  color: #211f1c !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.48);
+}
+
+.editor-warm-studio .editor-pane input:not([type="range"]):focus,
+.editor-warm-studio .editor-pane textarea:focus,
+.editor-warm-studio .editor-pane select:focus {
+  border-color: #075be8 !important;
+  box-shadow:
+    0 0 0 1px rgba(7, 91, 232, 0.2),
+    0 8px 18px rgba(77, 63, 44, 0.06) !important;
+}
+
+.editor-warm-studio .editor-pane input::placeholder,
+.editor-warm-studio .editor-pane textarea::placeholder {
+  color: #b7afa4 !important;
+  font-weight: 400;
+  opacity: 0.78;
+}
+
+.editor-warm-studio .editor-section-card {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.58), rgba(255, 255, 255, 0.24)),
+    radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.56), transparent 30%);
+}
+
+.editor-warm-studio .preview-stage {
+  box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.38);
+}
+
+.editor-warm-studio .editor-pane .bg-slate-50 {
+  background-color: #fbf8f2 !important;
+}
+
+.editor-warm-studio .editor-pane .border-slate-200 {
+  border-color: rgba(225, 216, 204, 0.72) !important;
+}
+
+.editor-warm-studio .editor-pane .text-slate-500,
+.editor-warm-studio .editor-pane .text-slate-400 {
+  color: #8f877b !important;
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  html,
+  body {
+    width: 210mm;
+    min-height: 297mm;
+    background: #ffffff;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: rgba(7, 91, 232, 0.18);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(168, 156, 142, 0.28);
+  background-clip: content-box;
+  border: 2px solid transparent;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(124, 112, 96, 0.42);
+  background-clip: content-box;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.subtle-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(170, 161, 150, 0.2) transparent;
+}
+
+.subtle-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.subtle-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.subtle-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(170, 161, 150, 0.22);
+  background-clip: content-box;
+  border: 1px solid transparent;
+  border-radius: 999px;
+}
+
+.subtle-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(124, 112, 96, 0.38);
+  background-clip: content-box;
+}
